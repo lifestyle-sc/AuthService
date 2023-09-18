@@ -1,0 +1,58 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input LoginInputDto {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  deleteUser(id: String!): Boolean!
+  logout(id: String!): String!
+  postUser(user: UserInputDto!): UserOutputDto!
+  refreshToken(token: TokenInputDto!): TokenDto!
+  register(user: UserInputDto!): UserOutputDto!
+  signIn(user: LoginInputDto!): TokenDto!
+  updateUser(user: UserUpdateInputDto!): UserOutputDto!
+}
+
+type Query {
+  getUser(id: String!): UserOutputDto!
+  getUsers: [UserOutputDto!]!
+}
+
+type TokenDto {
+  accessToken: String!
+  refreshToken: String!
+}
+
+input TokenInputDto {
+  accessToken: String!
+  refreshToken: String!
+}
+
+input UserInputDto {
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
+  phoneNo: String
+}
+
+type UserOutputDto {
+  _id: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  phoneNo: String
+}
+
+input UserUpdateInputDto {
+  _id: String!
+  email: String
+  firstName: String
+  lastName: String
+  password: String
+  phoneNo: String
+}
